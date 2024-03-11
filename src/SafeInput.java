@@ -35,16 +35,16 @@ public class SafeInput
         do
         {
             System.out.print("\n" +prompt + ": ");
-            if (pipe.hasNextInt())
+            if (pipe.hasNextInt()) // input must be int
             {
-                retInt = pipe.nextInt();
+                retInt = pipe.nextInt(); //sets output to the given int
                 pipe.nextLine();
-                done= true;
+                done= true; //loop until int is given
             }
             else
             {
                 trash = pipe.nextLine();
-                System.out.println("\nYou must enter a valid number not: " + trash);
+                System.out.println("\nYou must enter a valid number not: " + trash); // print error
             }
 
 
@@ -68,9 +68,9 @@ public class SafeInput
         do
         {
             System.out.print("\n" +prompt + ": ");
-            if (pipe.hasNextDouble())
+            if (pipe.hasNextDouble()) // must input double
             {
-                retDouble = pipe.nextDouble();
+                retDouble = pipe.nextDouble(); // set output to given double
                 pipe.nextLine();
                 done= true;
             }
@@ -105,7 +105,7 @@ public class SafeInput
             {
                 retRangedInt = pipe.nextInt();
                 pipe.nextLine();
-                if(retRangedInt >= low && retRangedInt <= high)
+                if(retRangedInt >= low && retRangedInt <= high) //input must be inside the given range
                 {
                     done = true;
                 }
@@ -182,12 +182,12 @@ public class SafeInput
             getYN = pipe.nextLine();
             if (getYN.equalsIgnoreCase("Y"))
             {
-                retYN = true;
+                retYN = true; // on input Y sets boolean to true
                 done = true;
             }
             else if (getYN.equalsIgnoreCase("N"))
             {
-                retYN = false;
+                retYN = false; // on input N sets boolean to false
                 done = true;
             }
             else
@@ -214,7 +214,7 @@ public class SafeInput
         {
             System.out.print("\n" + prompt + ": ");
             retRegEx= pipe.nextLine();
-            if(retRegEx.matches(regEx))
+            if(retRegEx.matches(regEx)) // input must match the set pattern
             {
                 done = true;
             }
@@ -225,5 +225,5 @@ public class SafeInput
         }while(!done);
         return retRegEx;
     }
-    
+
 }
