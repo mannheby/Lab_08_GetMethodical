@@ -225,5 +225,5 @@ public class SafeInput
         }while(!done);
         return retRegEx;
     }
-
+    
 }
